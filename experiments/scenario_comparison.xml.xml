@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+<experiments>
+  <experiment name="All Scenarios Comparison" repetitions="1" sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="1000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>communication-events</metric>
+    <metric>get-collaboration-rate</metric>
+    <metric>get-robot-utilization</metric>
+    <runMetricsCondition>ticks mod 100 = 0</runMetricsCondition>
+    <enumeratedValueSet variable="initial-tasks">
+      <value value="30"/>
+      <value value="30"/>
+      <value value="60"/>
+      <value value="30"/>
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability">
+      <value value="90"/>
+      <value value="90"/>
+      <value value="90"/>
+      <value value="80"/>
+      <value value="40"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy">
+      <value value="70"/>
+      <value value="70"/>
+      <value value="30"/>
+      <value value="80"/>
+      <value value="90"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-transparency">
+      <value value="50"/>
+      <value value="80"/>
+      <value value="50"/>
+      <value value="70"/>
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency">
+      <value value="50"/>
+      <value value="70"/>
+      <value value="50"/>
+      <value value="50"/>
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate">
+      <value value="50"/>
+      <value value="60"/>
+      <value value="80"/>
+      <value value="80"/>
+      <value value="50"/>
+    </enumeratedValueSet>
+  </experiment>
+</experiments>

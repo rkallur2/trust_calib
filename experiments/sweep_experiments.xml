@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+<experiments>
+  <experiment name="Sweep_Reliability" repetitions="50" sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>communication-events</metric>
+    <metric>get-robot-utilization</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="robot-reliability" first="30" step="5" last="100"/>
+    <enumeratedValueSet variable="num-humans">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy">
+      <value value="70"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-transparency">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate">
+      <value value="50"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="Sweep_InitialTrust" repetitions="50" sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>communication-events</metric>
+    <metric>get-robot-utilization</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="initial-trust" first="0" step="10" last="100"/>
+    <enumeratedValueSet variable="num-humans">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability">
+      <value value="90"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy">
+      <value value="70"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-transparency">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate">
+      <value value="50"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="Sweep_Transparency" repetitions="50" sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>communication-events</metric>
+    <metric>get-robot-utilization</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="robot-transparency" first="0" step="10" last="100"/>
+    <enumeratedValueSet variable="num-humans">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability">
+      <value value="90"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy">
+      <value value="70"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate">
+      <value value="50"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="Sweep_CommFrequency" repetitions="50" sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>communication-events</metric>
+    <metric>get-robot-utilization</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="robot-comm-frequency" first="0" step="10" last="100"/>
+    <enumeratedValueSet variable="num-humans">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability">
+      <value value="90"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy">
+      <value value="70"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-transparency">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate">
+      <value value="50"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="Sweep_TeamSize" repetitions="50" sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>communication-events</metric>
+    <metric>get-robot-utilization</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="num-humans" first="1" step="1" last="5"/>
+    <steppedValueSet variable="num-robots" first="1" step="1" last="5"/>
+    <enumeratedValueSet variable="initial-tasks">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability">
+      <value value="90"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy">
+      <value value="70"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-transparency">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate">
+      <value value="50"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="Sweep_Reliability_x_Transparency" repetitions="50" sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>communication-events</metric>
+    <metric>get-robot-utilization</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="robot-reliability" first="40" step="15" last="100"/>
+    <steppedValueSet variable="robot-transparency" first="10" step="20" last="90"/>
+    <enumeratedValueSet variable="num-humans">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots">
+      <value value="3"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks">
+      <value value="30"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy">
+      <value value="70"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency">
+      <value value="50"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate">
+      <value value="50"/>
+    </enumeratedValueSet>
+  </experiment>
+</experiments>
