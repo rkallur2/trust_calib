@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+<experiments>
+
+  <!-- Reliability Sweep: 15 levels × 50 reps = 750 runs -->
+  <experiment name="Sweep_Reliability" repetitions="50"
+              sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>communication-events</metric>
+    <metric>get-robot-utilization</metric>
+    <metric>get-delegation-rate</metric>
+    <metric>get-human-idle-rate</metric>
+    <metric>get-monitoring-stress</metric>
+    <metric>get-active-stress</metric>
+    <metric>get-mean-kalman-gain</metric>
+    <metric>get-mean-trust-covariance</metric>
+    <metric>get-misallocation-rate</metric>
+    <metric>get-judgment-failure-rate</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="robot-reliability" first="30" step="5" last="100"/>
+    <enumeratedValueSet variable="num-humans"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks"><value value="30"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-transparency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="delegation-sensitivity"><value value="0.5"/></enumeratedValueSet>
+    <enumeratedValueSet variable="max-ticks"><value value="2000"/></enumeratedValueSet>
+  </experiment>
+
+  <!-- Transparency Sweep: 11 levels × 50 reps = 550 runs -->
+  <experiment name="Sweep_Transparency" repetitions="50"
+              sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>get-delegation-rate</metric>
+    <metric>get-human-idle-rate</metric>
+    <metric>get-mean-kalman-gain</metric>
+    <metric>get-mean-trust-covariance</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="robot-transparency" first="0" step="10" last="100"/>
+    <enumeratedValueSet variable="num-humans"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks"><value value="30"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability"><value value="90"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="delegation-sensitivity"><value value="0.5"/></enumeratedValueSet>
+    <enumeratedValueSet variable="max-ticks"><value value="2000"/></enumeratedValueSet>
+  </experiment>
+
+  <!-- Delegation Sensitivity Sweep: 11 levels × 50 reps = 550 runs -->
+  <experiment name="Sweep_Delegation" repetitions="50"
+              sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>get-delegation-rate</metric>
+    <metric>get-human-idle-rate</metric>
+    <metric>get-monitoring-stress</metric>
+    <metric>get-active-stress</metric>
+    <metric>get-mean-kalman-gain</metric>
+    <metric>get-mean-trust-covariance</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="delegation-sensitivity" first="0" step="0.1" last="1.0"/>
+    <enumeratedValueSet variable="num-humans"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks"><value value="30"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability"><value value="90"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-transparency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="max-ticks"><value value="2000"/></enumeratedValueSet>
+  </experiment>
+
+  <!-- Reliability × Transparency Crossed: 5×5×50 = 1250 runs -->
+  <experiment name="Sweep_Reliability_x_Transparency" repetitions="50"
+              sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>get-delegation-rate</metric>
+    <metric>get-human-idle-rate</metric>
+    <metric>get-mean-kalman-gain</metric>
+    <metric>get-mean-trust-covariance</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="robot-reliability" first="40" step="15" last="100"/>
+    <steppedValueSet variable="robot-transparency" first="10" step="20" last="90"/>
+    <enumeratedValueSet variable="num-humans"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks"><value value="30"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="delegation-sensitivity"><value value="0.5"/></enumeratedValueSet>
+    <enumeratedValueSet variable="max-ticks"><value value="2000"/></enumeratedValueSet>
+  </experiment>
+
+  <!-- Reliability × Delegation Crossed: 5×5×50 = 1250 runs -->
+  <experiment name="Sweep_Reliability_x_Delegation" repetitions="50"
+              sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>get-delegation-rate</metric>
+    <metric>get-human-idle-rate</metric>
+    <metric>get-monitoring-stress</metric>
+    <metric>get-active-stress</metric>
+    <metric>get-mean-kalman-gain</metric>
+    <metric>get-mean-trust-covariance</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="robot-reliability" first="40" step="15" last="100"/>
+    <steppedValueSet variable="delegation-sensitivity" first="0" step="0.25" last="1.0"/>
+    <enumeratedValueSet variable="num-humans"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks"><value value="30"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-transparency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="max-ticks"><value value="2000"/></enumeratedValueSet>
+  </experiment>
+
+  <!-- Transparency × Stress Crossed: tests adaptive Kalman gain -->
+  <!-- Uses high workload (60 tasks) to generate stress variation -->
+  <experiment name="Sweep_Transparency_x_Workload" repetitions="50"
+              sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>get-delegation-rate</metric>
+    <metric>get-mean-kalman-gain</metric>
+    <metric>get-mean-trust-covariance</metric>
+    <runMetricsCondition>ticks = 2000</runMetricsCondition>
+    <steppedValueSet variable="robot-transparency" first="10" step="20" last="90"/>
+    <enumeratedValueSet variable="initial-tasks">
+      <value value="15"/>
+      <value value="30"/>
+      <value value="45"/>
+      <value value="60"/>
+      <value value="75"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="num-humans"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="delegation-sensitivity"><value value="0.5"/></enumeratedValueSet>
+    <enumeratedValueSet variable="max-ticks"><value value="2000"/></enumeratedValueSet>
+  </experiment>
+
+  <!-- Time-Series: Baseline with metrics every 20 ticks -->
+  <experiment name="TimeSeries_Baseline" repetitions="20"
+              sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>total-tasks-completed</metric>
+    <metric>team-efficiency</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>get-delegation-rate</metric>
+    <metric>get-human-idle-rate</metric>
+    <metric>get-monitoring-stress</metric>
+    <metric>get-active-stress</metric>
+    <metric>get-mean-kalman-gain</metric>
+    <metric>get-mean-trust-covariance</metric>
+    <runMetricsCondition>ticks mod 20 = 0</runMetricsCondition>
+    <enumeratedValueSet variable="num-humans"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks"><value value="30"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability"><value value="90"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-transparency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="delegation-sensitivity"><value value="0.5"/></enumeratedValueSet>
+    <enumeratedValueSet variable="max-ticks"><value value="2000"/></enumeratedValueSet>
+  </experiment>
+
+  <!-- Time-Series: Compare high vs low transparency trust convergence -->
+  <experiment name="TimeSeries_Transparency_Compare" repetitions="20"
+              sequentialRunOrder="false" runMetricsEveryStep="false">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="2000"/>
+    <metric>average-trust</metric>
+    <metric>get-average-stress</metric>
+    <metric>get-task-success-rate</metric>
+    <metric>get-mean-kalman-gain</metric>
+    <metric>get-mean-trust-covariance</metric>
+    <runMetricsCondition>ticks mod 20 = 0</runMetricsCondition>
+    <enumeratedValueSet variable="robot-transparency">
+      <value value="10"/>
+      <value value="50"/>
+      <value value="90"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="num-humans"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="num-robots"><value value="3"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-tasks"><value value="30"/></enumeratedValueSet>
+    <enumeratedValueSet variable="initial-trust"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-reliability"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-autonomy"><value value="70"/></enumeratedValueSet>
+    <enumeratedValueSet variable="robot-comm-frequency"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="collaboration-rate"><value value="50"/></enumeratedValueSet>
+    <enumeratedValueSet variable="delegation-sensitivity"><value value="0.5"/></enumeratedValueSet>
+    <enumeratedValueSet variable="max-ticks"><value value="2000"/></enumeratedValueSet>
+  </experiment>
+
+</experiments>
